@@ -21,8 +21,7 @@ public class FotoGaleriasPage extends FotoGaleriasLocators {
 	public boolean Recomendadas(int numFotosRecomendadas) throws InterruptedException {	
 		TestRule.getDriver().manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);		
 		wait.until(ExpectedConditions.visibilityOf(popCancel));
-		popCancel.click();
-//		hover.moveToElement(houverRecomendadas).build().perform();			
+		popCancel.click();	
 		if(areaRecomendadas.size() == numFotosRecomendadas) {
 			return true;
 		}else {
@@ -56,7 +55,6 @@ public class FotoGaleriasPage extends FotoGaleriasLocators {
 	}
 	
 	public boolean Ultima_de(int valorUltima) {
-//		hover.moveToElement(selectEditorias).build().perform();
 		if(aeraUltimade.size() == valorUltima) {
 			return true;
 		}else {
