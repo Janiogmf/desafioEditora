@@ -32,4 +32,8 @@ public class Utils {
 		ExtentTest extentTest = TestRule.getExtenteTest();
 		extentTest.log(Status.FAIL, strMensagem);
 	}
+	public static void logInfo(String strMensagem) {
+		ExtentTest extentTest = TestRule.getExtenteTest();
+		extentTest.log(Status.INFO, strMensagem);
+	}
 }
