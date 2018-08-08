@@ -44,11 +44,9 @@ public class TestRule {
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-  	    driver.get("https://m.oglobo.globo.com/fotogalerias/");
-  	    
 	}
-	@After
-    public void afterCenario(Scenario cenario) {
+    	@After
+    	public void afterCenario(Scenario cenario) {
   	  if(cenario.isFailed()) {
   	  extentTest.log(Status.FAIL, "Cenario "+cenario.getName()+ " executado com falhas!");
   	  extentReport.flush(); 
@@ -56,12 +54,11 @@ public class TestRule {
   		  extentTest.log(Status.PASS, "Cenario "+cenario.getName()+ " executado com sucesso!");
       	  extentReport.flush(); 
   	  }
-    }
+    	}
 	public static WebDriver getDriver() {
   	  return driver;  	  
-    }
+    	}
 	public static ExtentTest getExtenteTest() {
   	  return extentTest;
-    }
-	
+    	}	
 }
