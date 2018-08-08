@@ -1,9 +1,9 @@
 #language: pt
 @FuncionalidadesFotogalerias
 
-Funcionalidade: Validar funcionalidade página Fotogalerias
+Funcionalidade: Validar funcionalidade pagina Fotogalerias
 
-Contexto: cadastro de boletins newsletters
+Contexto: Validar numeros de imagens por area
 Dado que acesse o site "https://m.oglobo.globo.com/fotogalerias/".
   
   @Areas_Fotografias
@@ -14,5 +14,3 @@ Dado que acesse o site "https://m.oglobo.globo.com/fotogalerias/".
     E validar numero 3 fotografias area ultimas de.
     Entao selecionar "Economia" Select ultimas de.
     E validar numero 3 fotografias area ultimas de.
-    
-
