@@ -7,12 +7,11 @@ import cucumber.api.java.pt.Entao;
 import pages.FotoGaleriasPage;
 
 public class NewsLettersSteps {
+	
 	@Dado("^que acesse o site \"([^\"]*)\"\\.$")
-	public void que_acesse_o_site(String arg1) {
-		
-//		TestRule produtoPage = new TestRule();
-//		produtoPage.inicializa(arg1);
-//		TestRule.getDriver();
+	public void que_acesse_o_site(String urlSite) {
+		TestRule.getDriver().get(urlSite);
+		Utils.logInfo("Acesse o site "+urlSite);
 	}
 	
 	@Entao("^validar numero (\\d+) fotografias area recomendados\\.$")
@@ -24,7 +23,7 @@ public class NewsLettersSteps {
 		}else {
 			Utils.logFail("validar 6 fotografias area recomendados NOK!");
 		}
-		Assert.assertTrue("Falha na validação Recomendados", validarRecomendados );
+		Assert.assertTrue("Falha na validacao Recomendados", validarRecomendados );
 	}
 	
 	@Entao("^validar numero (\\d+) fotografias area mais vistas\\.$")
@@ -36,7 +35,7 @@ public class NewsLettersSteps {
 		}else {
 			Utils.logFail("validar 3 fotografias area mais vistas NOK!");
 		}
-		Assert.assertTrue("Falha na validação Mias Vistas", validarMaisVistas );
+		Assert.assertTrue("Falha na validacao Mias Vistas", validarMaisVistas );
 	}
 	
 	@Dado("^validar opcao defaut de selecao \"([^\"]*)\"\\.$")
@@ -48,13 +47,14 @@ public class NewsLettersSteps {
 		}else {
 			Utils.logFail("validar opcao defaut de selecao 'Todas' NOK!");
 		}
-		Assert.assertTrue("Falha na validação Default Select", validarSelecao );
+		Assert.assertTrue("Falha na validacao Default Select", validarSelecao );
 	}
 	
 	@Entao("^selecionar \"([^\"]*)\" Select ultimas de\\.$")
 	public void selecionar_Select_ultimas_de(String selecao) {
 		FotoGaleriasPage  fotoGaleriasPage = new FotoGaleriasPage();
 		fotoGaleriasPage.selectUltimas(selecao);
+		Utils.logInfo("Selecionar a opcao "+selecao);
 	}
 	
 	@Dado("^validar numero (\\d+) fotografias area ultimas de\\.$")
@@ -66,6 +66,6 @@ public class NewsLettersSteps {
 		}else {
 			Utils.logFail("3 fotografias area ultimas de NOK!");
 		}
-		Assert.assertTrue("Falha na validação Ultima de", validarAreaUltima );
+		Assert.assertTrue("Falha na validaÃ§Ã£o Ultima de", validarAreaUltima );
 	}
 }
